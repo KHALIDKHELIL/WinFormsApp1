@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Label1 = New Label()
         txtName = New TextBox()
         Label2 = New Label()
@@ -37,8 +38,17 @@ Partial Class Form1
         cmdShow = New Button()
         cmdExit = New Button()
         cmbdepartment = New ComboBox()
+        Listbox1 = New ListBox()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        MenuStrip1 = New MenuStrip()
+        FilterToolStripMenuItem = New ToolStripMenuItem()
+        ByDepartmentToolStripMenuItem = New ToolStripMenuItem()
+        ByDivisionToolStripMenuItem = New ToolStripMenuItem()
+        ByGenderToolStripMenuItem = New ToolStripMenuItem()
+        AdvancedToolStripMenuItem = New ToolStripMenuItem()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
+        MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -56,6 +66,7 @@ Partial Class Form1
         txtName.Name = "txtName"
         txtName.Size = New Size(302, 27)
         txtName.TabIndex = 3
+        txtName.Text = "fdvdf"
         ' 
         ' Label2
         ' 
@@ -69,9 +80,11 @@ Partial Class Form1
         ' stDOB
         ' 
         stDOB.Location = New Point(135, 158)
+        stDOB.MinDate = New Date(1930, 6, 10, 0, 0, 0, 0)
         stDOB.Name = "stDOB"
         stDOB.Size = New Size(250, 27)
         stDOB.TabIndex = 6
+        stDOB.Value = New Date(2023, 12, 25, 23, 59, 59, 0)
         ' 
         ' Label3
         ' 
@@ -86,7 +99,7 @@ Partial Class Form1
         ' 
         GroupBox1.Controls.Add(rdFemale)
         GroupBox1.Controls.Add(rdMale)
-        GroupBox1.Location = New Point(116, 256)
+        GroupBox1.Location = New Point(43, 265)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(190, 96)
         GroupBox1.TabIndex = 9
@@ -121,9 +134,9 @@ Partial Class Form1
         GroupBox2.Controls.Add(rdExtension)
         GroupBox2.Controls.Add(rdRegular)
         GroupBox2.ForeColor = SystemColors.ActiveCaptionText
-        GroupBox2.Location = New Point(524, 265)
+        GroupBox2.Location = New Point(275, 265)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(212, 87)
+        GroupBox2.Size = New Size(214, 96)
         GroupBox2.TabIndex = 10
         GroupBox2.TabStop = False
         GroupBox2.Text = "Division"
@@ -188,11 +201,69 @@ Partial Class Form1
         cmbdepartment.Sorted = True
         cmbdepartment.TabIndex = 14
         ' 
+        ' Listbox1
+        ' 
+        Listbox1.FormattingEnabled = True
+        Listbox1.ItemHeight = 20
+        Listbox1.Location = New Point(670, 163)
+        Listbox1.Name = "Listbox1"
+        Listbox1.Size = New Size(276, 84)
+        Listbox1.TabIndex = 15
+        ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.ImageScalingSize = New Size(20, 20)
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(61, 4)
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.ImageScalingSize = New Size(20, 20)
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FilterToolStripMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(1447, 28)
+        MenuStrip1.TabIndex = 17
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
+        ' FilterToolStripMenuItem
+        ' 
+        FilterToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ByDepartmentToolStripMenuItem, ByDivisionToolStripMenuItem, ByGenderToolStripMenuItem, AdvancedToolStripMenuItem})
+        FilterToolStripMenuItem.Name = "FilterToolStripMenuItem"
+        FilterToolStripMenuItem.Size = New Size(56, 24)
+        FilterToolStripMenuItem.Text = "Filter"
+        ' 
+        ' ByDepartmentToolStripMenuItem
+        ' 
+        ByDepartmentToolStripMenuItem.Name = "ByDepartmentToolStripMenuItem"
+        ByDepartmentToolStripMenuItem.Size = New Size(224, 26)
+        ByDepartmentToolStripMenuItem.Text = "By Department"
+        ' 
+        ' ByDivisionToolStripMenuItem
+        ' 
+        ByDivisionToolStripMenuItem.Name = "ByDivisionToolStripMenuItem"
+        ByDivisionToolStripMenuItem.Size = New Size(224, 26)
+        ByDivisionToolStripMenuItem.Text = "By Division"
+        ' 
+        ' ByGenderToolStripMenuItem
+        ' 
+        ByGenderToolStripMenuItem.Name = "ByGenderToolStripMenuItem"
+        ByGenderToolStripMenuItem.Size = New Size(224, 26)
+        ByGenderToolStripMenuItem.Text = "By Gender"
+        ' 
+        ' AdvancedToolStripMenuItem
+        ' 
+        AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
+        AdvancedToolStripMenuItem.Size = New Size(224, 26)
+        AdvancedToolStripMenuItem.Text = "Advanced"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1205, 550)
+        ClientSize = New Size(1447, 550)
+        Controls.Add(MenuStrip1)
+        Controls.Add(Listbox1)
         Controls.Add(cmbdepartment)
         Controls.Add(cmdExit)
         Controls.Add(cmdShow)
@@ -210,6 +281,8 @@ Partial Class Form1
         GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -228,4 +301,12 @@ Partial Class Form1
     Friend WithEvents cmdShow As Button
     Friend WithEvents cmdExit As Button
     Friend WithEvents cmbdepartment As ComboBox
+    Friend WithEvents Listbox1 As ListBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FilterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ByDepartmentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ByDivisionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ByGenderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AdvancedToolStripMenuItem As ToolStripMenuItem
 End Class
