@@ -207,7 +207,7 @@ Partial Class Form1
         Listbox1.ItemHeight = 20
         Listbox1.Location = New Point(670, 163)
         Listbox1.Name = "Listbox1"
-        Listbox1.Size = New Size(276, 84)
+        Listbox1.Size = New Size(608, 204)
         Listbox1.TabIndex = 15
         ' 
         ' ContextMenuStrip1
@@ -236,25 +236,25 @@ Partial Class Form1
         ' ByDepartmentToolStripMenuItem
         ' 
         ByDepartmentToolStripMenuItem.Name = "ByDepartmentToolStripMenuItem"
-        ByDepartmentToolStripMenuItem.Size = New Size(224, 26)
+        ByDepartmentToolStripMenuItem.Size = New Size(192, 26)
         ByDepartmentToolStripMenuItem.Text = "By Department"
         ' 
         ' ByDivisionToolStripMenuItem
         ' 
         ByDivisionToolStripMenuItem.Name = "ByDivisionToolStripMenuItem"
-        ByDivisionToolStripMenuItem.Size = New Size(224, 26)
+        ByDivisionToolStripMenuItem.Size = New Size(192, 26)
         ByDivisionToolStripMenuItem.Text = "By Division"
         ' 
         ' ByGenderToolStripMenuItem
         ' 
         ByGenderToolStripMenuItem.Name = "ByGenderToolStripMenuItem"
-        ByGenderToolStripMenuItem.Size = New Size(224, 26)
+        ByGenderToolStripMenuItem.Size = New Size(192, 26)
         ByGenderToolStripMenuItem.Text = "By Gender"
         ' 
         ' AdvancedToolStripMenuItem
         ' 
         AdvancedToolStripMenuItem.Name = "AdvancedToolStripMenuItem"
-        AdvancedToolStripMenuItem.Size = New Size(224, 26)
+        AdvancedToolStripMenuItem.Size = New Size(192, 26)
         AdvancedToolStripMenuItem.Text = "Advanced"
         ' 
         ' Form1
